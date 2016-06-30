@@ -1,0 +1,96 @@
+/*
+Theme Name: TheChat
+Description: Simple chatroom built with Node.js
+Author: Michael J Melton <meltonm83@gmail.com>
+Author URI: http://elmeltone.github.io/
+Tags: Website, Chat, Chatroom, Node.js
+*/
+
+/***** Colors ******/
+
+$background: #7cdbd5;
+$compliment: #02c8a7;
+$emphasis: #f53240;
+$anchor: #f9be02;
+$plain: #ffffff;
+$other: #000000;
+
+/*
+#7cdbd5 sky
+#02c8a7 aquamarine
+#f53240 bright coral
+#f9be02 golden
+#ffffff white
+#000000 black
+*/
+
+/***** Normalize ******/
+
+@import 'normalize';
+
+/***** Mixins ******/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+/***** General Styles *****/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: $plain;
+    background-color: $background;
+    font-size: 1.5em;
+}
+
+h1 {
+    background-color: $compliment;
+    margin:  0 0 20px 0;
+    padding: 20px;
+    text-align: center;
+}
+
+canvas, input {
+  &:focus {
+    outline: none;
+    @include box-shadow(0, 0, 10px, $anchor);
+  }
+}
+
+input {
+  border: none;
+}
+
+canvas {
+    width: 800px;
+    height: 600px;
+    background: $plain;
+    border: 1px $anchor solid;
+    display: block;
+    margin: 0 auto;
+}
+
+/***** Guessing Area *****/
+
+#top-message {
+  text-align: center;
+  padding: 10px;
+}

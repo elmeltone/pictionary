@@ -4,12 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:sass",
+    "build:min:sass": "node-sass public/sass/main.scss | cleancss -o public/main.min.css",
+    "build:sass": "node-sass public/sass/main.scss public/main.css",
+    "watch": "npm run watch:sass",
+    "watch:sass": "nodemon -e scss -w public/sass -x 'npm run build:sass'"
   },
   "author": "Michael J Melton",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
     "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "clean-css": "^3.4.18",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.9.2"
   }
 }
