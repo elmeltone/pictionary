@@ -3,6 +3,9 @@ $(function() {
         'reconnection': false
     });
 
+    var $guesses = $('#guess');
+    var message;
+
     var pictionary = function() {
         var canvas, context;
 
@@ -13,7 +16,13 @@ $(function() {
             context.fill();
         };
 
+        var guess = function(message) {
+            $guesses.append('<div class="message-box">'+message+'</div>');
+            $guesses[0].scrollTop = $guesses[0].scrollHeight;
+        };
+
         var drawing = false;
+        var guessBox;
 
         canvas = $('canvas');
         context = canvas[0].getContext('2d');
@@ -34,6 +43,21 @@ $(function() {
         });
         socket.on('draw', function(position) {
             draw(position);
+        });
+        var onKeyDown = function(event) {
+            if (event.keyCode != 13) { // Enter
+                return;
+            }
+
+            message = guessBox.val();
+            console.log(message);
+            socket.emit('guess', message);
+            guessBox.val('');
+        };
+        guessBox = $('#guess input');
+        guessBox.on('keydown', onKeyDown);
+        socket.on('guess', function(message) {
+            guess(message);
         });
     };
 
