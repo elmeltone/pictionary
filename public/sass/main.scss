@@ -74,7 +74,6 @@ h1 {
 canvas {
   width: 96%;
   height: 60vh;
-  border: 2px $compliment solid;
   background: $plain;
   display: block;
   margin: 0 auto;
@@ -98,12 +97,15 @@ canvas {
 .guess-place, .guesses {
   width: 90%;
   margin: 0 auto;
-  border: 2px $compliment solid;
-  @include border-radius(3px);
   color: $emphasis;
   &:focus {
     outline: none;
   }
+}
+
+.guess-place, .guesses, canvas {
+  border: 2px $compliment solid;
+  @include border-radius(4px);
 }
 
 .guesses {
