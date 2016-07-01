@@ -387,11 +387,25 @@ textarea {
 * {
   box-sizing: border-box; }
 
-body {
+html, body {
   color: #ffffff;
   background: #7cdbd5;
-  font-size: 1.5em;
+  scrollbar-face-color: #02c8a7;
+  scrollbar-track-color: #7cdbd5;
   position: relative; }
+  html ::-webkit-scrollbar, body ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem; }
+  html ::-webkit-scrollbar-thumb, body ::-webkit-scrollbar-thumb {
+    background: #02c8a7; }
+  html ::-webkit-scrollbar-track, body ::-webkit-scrollbar-track {
+    opacity: .8;
+    background: #7cdbd5;
+    border: 1px solid #02c8a7;
+    position: absolute; }
+
+body {
+  font-size: 1.5em; }
 
 h1, div, input {
   text-align: center; }
