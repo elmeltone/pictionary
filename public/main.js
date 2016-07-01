@@ -3,7 +3,7 @@ $(function() {
         'reconnection': false
     });
 
-    var $guesses = $('#guess');
+    var $guesses = $('.guesses');
     var message;
 
     var pictionary = function() {
@@ -17,7 +17,7 @@ $(function() {
         };
 
         var guess = function(message) {
-            $guesses.append('<div class="message-box">'+message+'</div>');
+            $guesses.append('<div class="message-box">'+message+'</div>').show('fast');
             $guesses[0].scrollTop = $guesses[0].scrollHeight;
         };
 
@@ -50,7 +50,7 @@ $(function() {
             }
 
             message = guessBox.val();
-            console.log(message);
+            console.log(guessBox.val());
             socket.emit('guess', message);
             guessBox.val('');
         };

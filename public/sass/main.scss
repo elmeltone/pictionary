@@ -52,45 +52,62 @@ $other: #000000;
 /***** General Styles *****/
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    color: $plain;
-    background-color: $background;
-    font-size: 1.5em;
+  color: $plain;
+  background-color: $background;
+  font-size: 1.5em;
+}
+
+h1, div, input {
+  text-align: center;
 }
 
 h1 {
-    background-color: $compliment;
-    margin:  0 0 20px 0;
-    padding: 20px;
-    text-align: center;
-}
-
-canvas, input {
-  &:focus {
-    outline: none;
-    @include box-shadow(0, 0, 10px, $anchor);
-  }
-}
-
-input {
-  border: none;
+  background-color: $compliment;
+  margin:  0 0 20px 0;
+  padding: 4px 20px;
 }
 
 canvas {
-    width: 800px;
-    height: 600px;
-    background: $plain;
-    border: 1px $anchor solid;
-    display: block;
-    margin: 0 auto;
+  width: 96%;
+  height: 60vh;
+  border: 2px $compliment solid;
+  background: $plain;
+  display: block;
+  margin: 0 auto;
 }
 
 /***** Guessing Area *****/
 
+#top-message, #guesslist {
+  width: 48%;
+  margin: 0;
+  padding: 1%;
+  display: inline-block;
+}
+
 #top-message {
-  text-align: center;
-  padding: 10px;
+}
+
+#guesslist {
+}
+
+.guess-place, .guesses {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px $compliment solid;
+  @include border-radius(3px);
+  color: $emphasis;
+  &:focus {
+    outline: none;
+  }
+}
+
+.guesses {
+  display: none;
+  height: 10vh;
+  background: $plain;
 }

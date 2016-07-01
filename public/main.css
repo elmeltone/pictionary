@@ -392,30 +392,42 @@ body {
   background-color: #7cdbd5;
   font-size: 1.5em; }
 
+h1, div, input {
+  text-align: center; }
+
 h1 {
   background-color: #02c8a7;
   margin: 0 0 20px 0;
-  padding: 20px;
-  text-align: center; }
-
-canvas:focus, input:focus {
-  outline: none;
-  -webkit-box-shadow: 0 0 10px #f9be02;
-  -moz-box-shadow: 0 0 10px #f9be02;
-  box-shadow: 0 0 10px #f9be02; }
-
-input {
-  border: none; }
+  padding: 4px 20px; }
 
 canvas {
-  width: 800px;
-  height: 600px;
+  width: 96%;
+  height: 60vh;
+  border: 2px #02c8a7 solid;
   background: #ffffff;
-  border: 1px #f9be02 solid;
   display: block;
   margin: 0 auto; }
 
 /***** Guessing Area *****/
-#top-message {
-  text-align: center;
-  padding: 10px; }
+#top-message, #guesslist {
+  width: 48%;
+  margin: 0;
+  padding: 1%;
+  display: inline-block; }
+
+.guess-place, .guesses {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px #02c8a7 solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  color: #f53240; }
+  .guess-place:focus, .guesses:focus {
+    outline: none; }
+
+.guesses {
+  display: none;
+  height: 10vh;
+  background: #ffffff; }
