@@ -1,9 +1,9 @@
 /*
-Theme Name: TheChat
-Description: Simple chatroom built with Node.js
+Theme Name: Pictionary
+Description: Drawing game built for multiple clients with Node.js
 Author: Michael J Melton <meltonm83@gmail.com>
 Author URI: http://elmeltone.github.io/
-Tags: Website, Chat, Chatroom, Node.js
+Tags: Website, Drawing, Pictionary, Node.js
 */
 /***** Colors ******/
 /*
@@ -389,33 +389,39 @@ textarea {
 
 body {
   color: #ffffff;
-  background-color: #7cdbd5;
-  font-size: 1.5em; }
+  background: #7cdbd5;
+  font-size: 1.5em;
+  position: relative; }
 
 h1, div, input {
   text-align: center; }
 
 h1 {
   background-color: #02c8a7;
-  margin: 0 0 20px 0;
+  margin: 0 0 4px 0;
   padding: 4px 20px; }
 
 canvas {
-  width: 96%;
+  width: 60%;
   height: 60vh;
   background: #ffffff;
-  display: block;
-  margin: 0 auto; }
+  display: block; }
 
 /***** Guessing Area *****/
-#top-message, #guesslist {
-  width: 48%;
-  margin: 0;
-  padding: 1%;
-  display: inline-block; }
+#game, canvas {
+  float: left;
+  margin: 1%; }
+
+#game {
+  width: 36%; }
+
+#guesslist, #top-message {
+  width: 98%;
+  margin: 0 0 0 1%;
+  padding: 1% 0; }
 
 .guess-place, .guesses {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   color: #f53240; }
   .guess-place:focus, .guesses:focus {
@@ -429,6 +435,6 @@ canvas {
   border-radius: 4px; }
 
 .guesses {
-  display: none;
   height: 10vh;
-  background: #ffffff; }
+  background: #ffffff;
+  overflow-y: auto; }

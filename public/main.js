@@ -1,6 +1,9 @@
 $(function() {
     var socket = io({
-        'reconnection': false
+        'reconnection': true,
+        'reconnectionDelay': 1000,
+        'reconnectionDelayMax' : 5000,
+        'reconnectionAttempts': 2
     });
 
     var $guesses = $('.guesses');
@@ -17,7 +20,7 @@ $(function() {
         };
 
         var guess = function(message) {
-            $guesses.append('<div class="message-box">'+message+'</div>').show('fast');
+            $guesses.append('<div class="message-box">'+message+'</div>');
             $guesses[0].scrollTop = $guesses[0].scrollHeight;
         };
 

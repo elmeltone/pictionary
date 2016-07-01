@@ -1,9 +1,9 @@
 /*
-Theme Name: TheChat
-Description: Simple chatroom built with Node.js
+Theme Name: Pictionary
+Description: Drawing game built for multiple clients with Node.js
 Author: Michael J Melton <meltonm83@gmail.com>
 Author URI: http://elmeltone.github.io/
-Tags: Website, Chat, Chatroom, Node.js
+Tags: Website, Drawing, Pictionary, Node.js
 */
 
 /***** Colors ******/
@@ -57,8 +57,9 @@ $other: #000000;
 
 body {
   color: $plain;
-  background-color: $background;
+  background: $background;
   font-size: 1.5em;
+  position: relative;
 }
 
 h1, div, input {
@@ -67,35 +68,39 @@ h1, div, input {
 
 h1 {
   background-color: $compliment;
-  margin:  0 0 20px 0;
+  margin:  0 0 4px 0;
   padding: 4px 20px;
 }
 
 canvas {
-  width: 96%;
+  width: 60%;
   height: 60vh;
   background: $plain;
   display: block;
-  margin: 0 auto;
 }
 
 /***** Guessing Area *****/
 
-#top-message, #guesslist {
-  width: 48%;
-  margin: 0;
-  padding: 1%;
-  display: inline-block;
+#game, canvas {
+  float: left;
+  margin: 1%;
 }
 
-#top-message {
+#game {
+  width: 36%;
+}
+
+#guesslist, #top-message {
+  width: 98%;
+  margin: 0 0 0 1%;
+  padding: 1% 0;
 }
 
 #guesslist {
 }
 
 .guess-place, .guesses {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   color: $emphasis;
   &:focus {
@@ -109,7 +114,10 @@ canvas {
 }
 
 .guesses {
-  display: none;
   height: 10vh;
   background: $plain;
+  overflow-y: auto;
+}
+
+#top-message {
 }
