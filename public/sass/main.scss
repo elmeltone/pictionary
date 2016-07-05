@@ -9,7 +9,7 @@ Tags: Website, Drawing, Pictionary, Node.js
 /***** Colors ******/
 
 $background: #7cdbd5;
-$compliment: #02c8a7;
+$complement: #02c8a7;
 $emphasis: #f53240;
 $anchor: #f9be02;
 $plain: #ffffff;
@@ -62,7 +62,7 @@ $other: #000000;
   ::-webkit-scrollbar-track {
     opacity: .8;
       background: $background-color;
-      border: 1px solid $compliment;
+      border: 1px solid $complement;
       position: absolute;
   }
 }
@@ -76,8 +76,8 @@ $other: #000000;
 html, body {
   color: $plain;
   background: $background;
-  @include scrollbars(0.5rem, $compliment);
-  scrollbar-face-color: $compliment;
+  @include scrollbars(0.5rem, $complement);
+  scrollbar-face-color: $complement;
   scrollbar-track-color: $background;
   position: relative;
 }
@@ -91,14 +91,14 @@ h1, div, input {
 }
 
 h1 {
-  background-color: $compliment;
+  background-color: $complement;
   margin:  0 0 4px 0;
   padding: 4px 20px;
 }
 
 canvas {
   width: 60%;
-  height: 60vh;
+  height: 80vh;
   background: $plain;
   display: block;
 }
@@ -120,6 +120,13 @@ canvas {
   padding: 1% 0;
 }
 
+#word {
+  display: none;
+  height: 10%;
+  background: $emphasis;
+  @include border-radius(4px);
+}
+
 #guesslist {
 }
 
@@ -133,12 +140,12 @@ canvas {
 }
 
 .guess-place, .guesses, canvas {
-  border: 2px $compliment solid;
+  border: 2px $complement solid;
   @include border-radius(4px);
 }
 
 .guesses {
-  height: 10vh;
+  height: 60vh;
   background: $plain;
   overflow-y: auto;
 }

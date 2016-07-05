@@ -417,7 +417,7 @@ h1 {
 
 canvas {
   width: 60%;
-  height: 60vh;
+  height: 80vh;
   background: #ffffff;
   display: block; }
 
@@ -434,6 +434,15 @@ canvas {
   margin: 0 0 0 1%;
   padding: 1% 0; }
 
+#word {
+  display: none;
+  height: 10%;
+  background: #f53240;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px; }
+
 .guess-place, .guesses {
   width: 100%;
   margin: 0 auto;
@@ -449,6 +458,6 @@ canvas {
   border-radius: 4px; }
 
 .guesses {
-  height: 10vh;
+  height: 60vh;
   background: #ffffff;
   overflow-y: auto; }

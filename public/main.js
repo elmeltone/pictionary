@@ -6,11 +6,27 @@ $(function() {
         'reconnectionAttempts': 2
     });
 
+    var $guess = $('#guess');
+    var $word = $('#word');
     var $guesses = $('.guesses');
     var message;
 
     var pictionary = function() {
         var canvas, context;
+
+        var newGame = function(gameObj) {
+            if (gameObj.isDrawing) {
+                $guess.hide();
+                $word.show();
+                $word.text('Draw: '+gameObj.word);
+            } else {
+                $word.hide();
+                $guess.show();
+            };
+        };
+
+        var isGuessing = function() {
+        };
 
         var draw = function(position) {
             context.beginPath();
@@ -24,9 +40,21 @@ $(function() {
             $guesses[0].scrollTop = $guesses[0].scrollHeight;
         };
 
+        var onKeyDown = function(event) {
+            if (event.keyCode != 13) { // Enter
+                return;
+            }
+
+            message = guessBox.val();
+            console.log(guessBox.val());
+            socket.emit('guess', message);
+            guessBox.val('');
+        };
+
         var drawing = false;
         var guessBox;
 
+        socket.emit('newUser');
         canvas = $('canvas');
         context = canvas[0].getContext('2d');
         canvas[0].width = canvas[0].offsetWidth;
@@ -43,20 +71,15 @@ $(function() {
             };
         }).on('mouseup', function(event) {
             drawing = false;
+        }).on('mouseleave', function() {
+            canvas.mouseup();
         });
+
+        socket.on('newGame', newGame);
         socket.on('draw', function(position) {
             draw(position);
         });
-        var onKeyDown = function(event) {
-            if (event.keyCode != 13) { // Enter
-                return;
-            }
 
-            message = guessBox.val();
-            console.log(guessBox.val());
-            socket.emit('guess', message);
-            guessBox.val('');
-        };
         guessBox = $('#guess input');
         guessBox.on('keydown', onKeyDown);
         socket.on('guess', function(message) {
