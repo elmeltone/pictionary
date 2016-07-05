@@ -90,8 +90,19 @@ h1, div, input {
   text-align: center;
 }
 
+input {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 h1 {
-  background-color: $complement;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: $complement;
+  width: 100%;
   margin:  0 0 4px 0;
   padding: 4px 20px;
 }
@@ -103,7 +114,44 @@ canvas {
   display: block;
 }
 
-/***** Guessing Area *****/
+/***** Login Page *****/
+
+.login {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 98;
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+}
+
+.drawer-button, .guesser-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background: $emphasis;
+  color: $plain;
+  border: 2px solid $complement;
+  @include border-radius(4px);
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    opacity: .75;
+  }
+}
+
+.drawer-button {
+  margin-top: 30vh;
+}
+
+.guesser-button {
+  margin-top: 4vh;
+}
+
+/***** Game Page *****/
 
 #game, canvas {
   float: left;
