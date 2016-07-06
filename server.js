@@ -32,8 +32,10 @@ function newWord() {
 
 io.on('connection', function (socket) {
   socket.on('newUser', function() {
-    users.push(socket.id);
-    if (null === drawer) {
+    if (!(users.indexOf(socket.id) > -1)) {
+      users.push(socket.id);
+    };
+    if (users[0] === socket.id) {
       drawer = socket.id;
       magicWord = newWord();
       var gameObj = {isDrawing: true, word: magicWord};
@@ -49,6 +51,18 @@ io.on('connection', function (socket) {
   socket.on('guess', function (message) {
     io.emit('guess', message);
   });
+  socket.on('disconnect', function() {
+    if (users != []) {
+      var index = users.indexOf(socket.id);
+      if (index > -1) {
+        users.splice(index, 1);
+      };
+      console.log('Client '+socket.id+' disconnected.');
+      if (drawer = socket.id) {
+        socket.broadcast.emit('startOver');
+      };
+    };
+  })
 });
 
 

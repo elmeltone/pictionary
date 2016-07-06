@@ -11,10 +11,20 @@ $(function() {
     var $guesses = $('.guesses');
     var message;
 
+    var startOver = function() {
+        socket.emit('newUser');
+    };
+
     var pictionary = function() {
         var canvas, context;
 
         var newGame = function(gameObj) {
+            $('.guesses').empty();
+            canvas = $('canvas');
+            context = canvas[0].getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            canvas[0].width = canvas[0].offsetWidth;
+            canvas[0].height = canvas[0].offsetHeight;
             if (gameObj.isDrawing) {
                 $guess.hide();
                 $word.show();
@@ -73,10 +83,6 @@ $(function() {
             $('.login').hide(200);
         });
         socket.emit('newUser');
-        canvas = $('canvas');
-        context = canvas[0].getContext('2d');
-        canvas[0].width = canvas[0].offsetWidth;
-        canvas[0].height = canvas[0].offsetHeight;
 
 
         socket.on('newGame', newGame);
@@ -89,6 +95,7 @@ $(function() {
         socket.on('guess', function(message) {
             guess(message);
         });
+        socket.on('startOver', startOver);
     };
 
     pictionary();
