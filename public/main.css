@@ -485,8 +485,7 @@ canvas {
   margin-right: auto; }
 
 #top-message {
-  width: 100%;
-  padding: 1% 0; }
+  padding: 0 0 1% 0; }
 
 #word {
   display: none;
@@ -511,7 +510,10 @@ canvas {
   border-radius: 4px; }
 
 .guess-place {
-  display: block; }
+  display: block;
+  width: 80%; }
+  .guess-place:hover {
+    cursor: text; }
 
 .guesses {
   height: 10vh;

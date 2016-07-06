@@ -180,8 +180,7 @@ canvas {
 }
 
 #top-message {
-  width: 100%;
-  padding: 1% 0;
+  padding: 0 0 1% 0;
 }
 
 #word {
@@ -206,6 +205,10 @@ canvas {
 
 .guess-place {
   display: block;
+  width: 80%;
+  &:hover {
+    cursor: text;
+  }
 }
 
 .guesses {
