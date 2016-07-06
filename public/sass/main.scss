@@ -123,8 +123,7 @@ h1 {
 }
 
 canvas {
-  width: 60%;
-  height: 80vh;
+  height: 60vh;
   background: $plain;
   display: block;
 }
@@ -174,18 +173,14 @@ canvas {
 
 /***** Game Page *****/
 
-#game, canvas {
-  float: left;
-  margin: 1%;
+#game, #top-message, #guess, canvas, #guess-list, .guesses {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#game {
-  width: 36%;
-}
-
-#guesslist, #top-message {
-  width: 98%;
-  margin: 0 0 0 1%;
+#top-message {
+  width: 100%;
   padding: 1% 0;
 }
 
@@ -196,12 +191,7 @@ canvas {
   @include border-radius(4px);
 }
 
-.guesses {
-  @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
-}
-
 .guess-place, .guesses {
-  width: 100%;
   margin: 0 auto;
   color: $emphasis;
   &:focus {
@@ -214,11 +204,13 @@ canvas {
   @include border-radius(4px);
 }
 
-.guesses {
-  height: 60vh;
-  background: $plain;
-  overflow-y: auto;
+.guess-place {
+  display: block;
 }
 
-#top-message {
+.guesses {
+  height: 10vh;
+  background: $plain;
+  overflow-y: auto;
+  @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }

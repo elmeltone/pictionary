@@ -436,8 +436,7 @@ h1 {
   border-bottom: 2px solid #017c68; }
 
 canvas {
-  width: 60%;
-  height: 80vh;
+  height: 60vh;
   background: #ffffff;
   display: block; }
 
@@ -480,16 +479,13 @@ canvas {
   margin-top: 4vh; }
 
 /***** Game Page *****/
-#game, canvas {
-  float: left;
-  margin: 1%; }
+#game, #top-message, #guess, canvas, #guess-list, .guesses {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto; }
 
-#game {
-  width: 36%; }
-
-#guesslist, #top-message {
-  width: 98%;
-  margin: 0 0 0 1%;
+#top-message {
+  width: 100%;
   padding: 1% 0; }
 
 #word {
@@ -501,13 +497,7 @@ canvas {
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
-.guesses {
-  -webkit-box-shadow: 0 8px 4px -4px #4d4d4d;
-  -moz-box-shadow: 0 8px 4px -4px #4d4d4d;
-  box-shadow: 0 8px 4px -4px #4d4d4d; }
-
 .guess-place, .guesses {
-  width: 100%;
   margin: 0 auto;
   color: #f53240; }
   .guess-place:focus, .guesses:focus {
@@ -520,7 +510,13 @@ canvas {
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
+.guess-place {
+  display: block; }
+
 .guesses {
-  height: 60vh;
+  height: 10vh;
   background: #ffffff;
-  overflow-y: auto; }
+  overflow-y: auto;
+  -webkit-box-shadow: 0 8px 4px -4px #4d4d4d;
+  -moz-box-shadow: 0 8px 4px -4px #4d4d4d;
+  box-shadow: 0 8px 4px -4px #4d4d4d; }
