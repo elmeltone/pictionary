@@ -19,6 +19,7 @@ $(function() {
         var canvas, context;
 
         var newGame = function(gameObj) {
+            drawing = gameObj.isDrawing;
             $('.guesses').empty();
             canvas = $('canvas');
             context = canvas[0].getContext('2d');
@@ -44,9 +45,9 @@ $(function() {
             }).on('mouseleave', function() {
                 canvas.mouseup();
             });
-                } else {
-                    $word.hide();
-                    $guess.show();
+            } else {
+                $word.hide();
+                $guess.show();
                 };
             };
 
