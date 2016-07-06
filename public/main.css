@@ -473,9 +473,9 @@ canvas {
     opacity: .75; }
 
 .drawer-button {
-  margin-top: 25vh; }
+  margin-top: 30vh; }
 
-.guesser-button, .practice-button {
+.guesser-button {
   margin-top: 4vh; }
 
 /***** Game Page *****/

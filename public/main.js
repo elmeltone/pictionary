@@ -19,11 +19,26 @@ $(function() {
                 $guess.hide();
                 $word.show();
                 $word.text('Draw: '+gameObj.word);
-            } else {
-                $word.hide();
-                $guess.show();
+                canvas.on('mousedown', function(event) {
+                drawing = true;
+            }).on('mousemove', function(event) {
+                if (drawing) {
+                    var offset = canvas.offset();
+                    var position = {x: event.pageX - offset.left,
+                                    y: event.pageY - offset.top};
+                    draw(position);
+                    socket.emit('draw', position);
+                };
+            }).on('mouseup', function(event) {
+                drawing = false;
+            }).on('mouseleave', function() {
+                canvas.mouseup();
+            });
+                } else {
+                    $word.hide();
+                    $guess.show();
+                };
             };
-        };
 
         var isGuessing = function() {
         };
@@ -62,21 +77,7 @@ $(function() {
         context = canvas[0].getContext('2d');
         canvas[0].width = canvas[0].offsetWidth;
         canvas[0].height = canvas[0].offsetHeight;
-        canvas.on('mousedown', function(event) {
-            drawing = true;
-        }).on('mousemove', function(event) {
-            if (drawing) {
-                var offset = canvas.offset();
-                var position = {x: event.pageX - offset.left,
-                                y: event.pageY - offset.top};
-                draw(position);
-                socket.emit('draw', position);
-            };
-        }).on('mouseup', function(event) {
-            drawing = false;
-        }).on('mouseleave', function() {
-            canvas.mouseup();
-        });
+
 
         socket.on('newGame', newGame);
         socket.on('draw', function(position) {
