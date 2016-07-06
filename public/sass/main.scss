@@ -13,7 +13,7 @@ $complement: #02c8a7;
 $emphasis: #f53240;
 $anchor: #f9be02;
 $plain: #ffffff;
-$other: #000000;
+$shadow: #000000;
 
 /*
 #7cdbd5 sky
@@ -23,6 +23,11 @@ $other: #000000;
 #ffffff white
 #000000 black
 */
+
+/***** Fonts ******/
+
+$serif: 'Slabo 27px', serif;
+$sans: 'Cabin', sans-serif;
 
 /***** Normalize ******/
 
@@ -37,15 +42,15 @@ $other: #000000;
           border-radius: $radius;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
   @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
+    -webkit-box-shadow:inset $top $left $blur $spread $color;
+    -moz-box-shadow:inset $top $left $blur $spread $color;
+    box-shadow:inset $top $left $blur $spread $color;
   } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
   }
 }
 
@@ -84,10 +89,16 @@ html, body {
 
 body {
   font-size: 1.5em;
+  font-family: $sans;
+  padding-top: 10vh;
 }
 
 h1, div, input {
   text-align: center;
+}
+
+input, canvas {
+  @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }
 
 input {
@@ -101,10 +112,14 @@ h1 {
   top: 0;
   left: 0;
   z-index: 99;
-  background: $complement;
   width: 100%;
   margin:  0 0 4px 0;
   padding: 4px 20px;
+  background: $complement;
+  color: lighten($anchor, 20%);
+  font-family: $serif;
+  letter-spacing: 8px;
+  border-bottom: 2px solid darken($complement, 15%);
 }
 
 canvas {
@@ -126,15 +141,21 @@ canvas {
   background: $background;
 }
 
-.drawer-button, .guesser-button {
+.choice {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  height: 4rem;
   width: 40%;
   background: $emphasis;
   color: $plain;
-  border: 2px solid $complement;
+  border: 2px solid darken($emphasis, 15%);
   @include border-radius(4px);
+  &:hover {
+    transition: ease-in-out 100ms;
+    transform: translate(0, -2px);
+    box-shadow: 0 19px 11px -12px lighten($shadow, 50%);
+    }
   &:focus {
     outline: none;
   }
@@ -144,10 +165,10 @@ canvas {
 }
 
 .drawer-button {
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 
-.guesser-button {
+.guesser-button, .practice-button {
   margin-top: 4vh;
 }
 
@@ -175,7 +196,8 @@ canvas {
   @include border-radius(4px);
 }
 
-#guesslist {
+.guesses {
+  @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }
 
 .guess-place, .guesses {
