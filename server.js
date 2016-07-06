@@ -58,9 +58,9 @@ io.on('connection', function (socket) {
         users.splice(index, 1);
       };
       console.log('Client '+socket.id+' disconnected.');
-      if (drawer = socket.id) {
-        socket.broadcast.emit('startOver');
       };
+    if (drawer != users[0]) {
+      socket.broadcast.emit('startOver');
     };
   })
 });
