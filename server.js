@@ -49,16 +49,7 @@ io.on('connection', function (socket) {
     socket.broadcast.emit('draw', position);
   });
   socket.on('guess', function (message) {
-    if (message === magicWord) {
-      var index = users.indexOf(socket.id);
-      if (index > -1) {
-        users.splice(index, 1);
-      };
-      users.unshift(socket.id);
-      io.emit('startOver');
-    } else {
-      io.emit('guess', message);
-    };
+    io.emit('guess', message);
   });
   socket.on('disconnect', function() {
     if (users != []) {
