@@ -128,50 +128,7 @@ canvas {
   display: block;
 }
 
-/***** Login Page *****/
-
-.login {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 98;
-  width: 100vw;
-  height: 100vh;
-  background: $background;
-}
-
-.choice {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 4rem;
-  width: 40%;
-  background: $emphasis;
-  color: $plain;
-  border: 2px solid darken($emphasis, 15%);
-  @include border-radius(4px);
-  &:hover {
-    transition: ease-in-out 100ms;
-    transform: translate(0, -2px);
-    box-shadow: 0 19px 11px -12px lighten($shadow, 50%);
-    }
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    opacity: .75;
-  }
-}
-
-.drawer-button {
-  margin-top: 30vh;
-}
-
-.guesser-button {
-  margin-top: 4vh;
-}
-
-/***** Game Page *****/
+/***** More Specific Styles *****/
 
 #game, #top-message, #guess, canvas, #guess-list, .guesses {
   width: 96%;

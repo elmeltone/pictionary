@@ -440,45 +440,7 @@ canvas {
   background: #ffffff;
   display: block; }
 
-/***** Login Page *****/
-.login {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 98;
-  width: 100vw;
-  height: 100vh;
-  background: #7cdbd5; }
-
-.choice {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 4rem;
-  width: 40%;
-  background: #f53240;
-  color: #ffffff;
-  border: 2px solid #d00a18;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px; }
-  .choice:hover {
-    transition: ease-in-out 100ms;
-    transform: translate(0, -2px);
-    box-shadow: 0 19px 11px -12px gray; }
-  .choice:focus {
-    outline: none; }
-  .choice:active {
-    opacity: .75; }
-
-.drawer-button {
-  margin-top: 30vh; }
-
-.guesser-button {
-  margin-top: 4vh; }
-
-/***** Game Page *****/
+/***** More Specific Styles *****/
 #game, #top-message, #guess, canvas, #guess-list, .guesses {
   width: 96%;
   margin-left: auto;

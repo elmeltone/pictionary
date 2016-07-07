@@ -79,12 +79,7 @@ $(function() {
         var drawing = false;
         var guessBox;
 
-        $('.choice').on('click', function() {
-            $('.login').hide(200);
-        });
         socket.emit('newUser');
-
-
         socket.on('newGame', newGame);
         socket.on('draw', function(position) {
             draw(position);
