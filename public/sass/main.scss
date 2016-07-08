@@ -167,7 +167,7 @@ canvas {
 
 .guess-place {
   display: block;
-  width: 80%;
+  width: 60%;
   &:hover {
     cursor: text;
   }
@@ -180,4 +180,22 @@ canvas {
   background: $plain;
   overflow-y: auto;
   @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
+}
+
+/***** Media Queries *****/
+
+@media screen and (min-width: 400px) {
+  body {
+  font-size: 20px;
+  padding-top: 10vh;
+  }
+  .guesses {
+  height: 15vh;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+  font-size: 24px;
+  }
 }

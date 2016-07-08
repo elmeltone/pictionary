@@ -480,7 +480,7 @@ canvas {
 
 .guess-place {
   display: block;
-  width: 80%; }
+  width: 60%; }
   .guess-place:hover {
     cursor: text; }
 
@@ -493,3 +493,15 @@ canvas {
   -webkit-box-shadow: 0 8px 4px -4px #737373;
   -moz-box-shadow: 0 8px 4px -4px #737373;
   box-shadow: 0 8px 4px -4px #737373; }
+
+/***** Media Queries *****/
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 20px;
+    padding-top: 10vh; }
+  .guesses {
+    height: 15vh; } }
+
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 24px; } }

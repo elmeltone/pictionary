@@ -50,6 +50,7 @@ $(function() {
                 });
                 $word.hide();
                 $guess.show();
+                $('.guess-place').focus();
             };
         };
 
