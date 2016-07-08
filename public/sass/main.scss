@@ -13,7 +13,7 @@ $complement: #02c8a7;
 $emphasis: #f53240;
 $anchor: #f9be02;
 $plain: #ffffff;
-$shadow: #000000;
+$shadow: lighten(#000000, 15%);
 
 /* ---
 #7cdbd5 sky
@@ -88,9 +88,9 @@ html, body {
 }
 
 body {
-  font-size: 20px;
+  font-size: 16px;
   font-family: $sans;
-  padding-top: 10vh;
+  padding-top: 12vh;
 }
 
 h1, div, input {
@@ -98,6 +98,7 @@ h1, div, input {
 }
 
 input, canvas {
+  margin-bottom: 4px;
   @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }
 
@@ -126,11 +127,12 @@ canvas {
   height: 60vh;
   background: $plain;
   display: block;
+  margin-top: 4px;
 }
 
-/***** More Specific Styles *****/
+/***** Specific Styles *****/
 
-#game, #top-message, #guess, canvas, #guess-list, .guesses {
+#game, #top-message, #guess, canvas, #guess-list {
   width: 96%;
   margin-left: auto;
   margin-right: auto;
@@ -143,8 +145,11 @@ canvas {
 #word {
   display: none;
   height: 10%;
+  width: 60%;
+  margin: 0 auto;
   background: $emphasis;
   @include border-radius(4px);
+  @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }
 
 .guess-place, .guesses {
@@ -170,6 +175,8 @@ canvas {
 
 .guesses {
   height: 10vh;
+  width: 80%;
+  margin: 0 auto;
   background: $plain;
   overflow-y: auto;
   @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));

@@ -406,17 +406,18 @@ html, body {
     position: absolute; }
 
 body {
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Cabin", sans-serif;
-  padding-top: 10vh; }
+  padding-top: 12vh; }
 
 h1, div, input {
   text-align: center; }
 
 input, canvas {
-  -webkit-box-shadow: 0 8px 4px -4px #4d4d4d;
-  -moz-box-shadow: 0 8px 4px -4px #4d4d4d;
-  box-shadow: 0 8px 4px -4px #4d4d4d; }
+  margin-bottom: 4px;
+  -webkit-box-shadow: 0 8px 4px -4px #737373;
+  -moz-box-shadow: 0 8px 4px -4px #737373;
+  box-shadow: 0 8px 4px -4px #737373; }
 
 input:hover {
   cursor: pointer; }
@@ -438,10 +439,11 @@ h1 {
 canvas {
   height: 60vh;
   background: #ffffff;
-  display: block; }
+  display: block;
+  margin-top: 4px; }
 
-/***** More Specific Styles *****/
-#game, #top-message, #guess, canvas, #guess-list, .guesses {
+/***** Specific Styles *****/
+#game, #top-message, #guess, canvas, #guess-list {
   width: 96%;
   margin-left: auto;
   margin-right: auto; }
@@ -452,11 +454,16 @@ canvas {
 #word {
   display: none;
   height: 10%;
+  width: 60%;
+  margin: 0 auto;
   background: #f53240;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  -webkit-box-shadow: 0 8px 4px -4px #737373;
+  -moz-box-shadow: 0 8px 4px -4px #737373;
+  box-shadow: 0 8px 4px -4px #737373; }
 
 .guess-place, .guesses {
   margin: 0 auto;
@@ -479,8 +486,10 @@ canvas {
 
 .guesses {
   height: 10vh;
+  width: 80%;
+  margin: 0 auto;
   background: #ffffff;
   overflow-y: auto;
-  -webkit-box-shadow: 0 8px 4px -4px #4d4d4d;
-  -moz-box-shadow: 0 8px 4px -4px #4d4d4d;
-  box-shadow: 0 8px 4px -4px #4d4d4d; }
+  -webkit-box-shadow: 0 8px 4px -4px #737373;
+  -moz-box-shadow: 0 8px 4px -4px #737373;
+  box-shadow: 0 8px 4px -4px #737373; }
