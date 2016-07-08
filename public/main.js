@@ -30,25 +30,28 @@ $(function() {
                 $word.show();
                 $word.text('Draw: '+gameObj.word);
                 canvas.on('mousedown', function(event) {
-                drawing = true;
-            }).on('mousemove', function(event) {
-                if (drawing) {
-                    var offset = canvas.offset();
-                    var position = {x: event.pageX - offset.left,
-                                    y: event.pageY - offset.top};
-                    draw(position);
-                    socket.emit('draw', position);
-                };
-            }).on('mouseup', function(event) {
-                drawing = false;
-            }).on('mouseleave', function() {
-                canvas.mouseup();
-            });
-                } else {
-                    $word.hide();
-                    $guess.show();
-                };
+                    drawing = true;
+                }).on('mousemove', function(event) {
+                    if (drawing) {
+                        var offset = canvas.offset();
+                        var position = {x: event.pageX - offset.left,
+                                        y: event.pageY - offset.top};
+                        draw(position);
+                        socket.emit('draw', position);
+                    };
+                }).on('mouseup', function(event) {
+                    drawing = false;
+                }).on('mouseleave', function() {
+                    canvas.mouseup();
+                });
+            } else {
+                canvas.on('mousedown', function(event) {
+                    drawing = false;
+                });
+                $word.hide();
+                $guess.show();
             };
+        };
 
         var isGuessing = function() {
         };

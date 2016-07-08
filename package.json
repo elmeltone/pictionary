@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:sass",
-    "build:min:sass": "node-sass public/sass/main.scss | cleancss -o public/main.min.css",
     "build:sass": "node-sass public/sass/main.scss public/main.css",
     "watch": "npm run watch:sass",
     "watch:sass": "nodemon -e scss -w public/sass -x 'npm run build:sass'"

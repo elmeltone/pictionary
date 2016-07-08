@@ -41,7 +41,7 @@ io.on('connection', function (socket) {
       var gameObj = {isDrawing: true, word: magicWord};
       socket.emit('newGame', gameObj)
     } else {
-      var gameObj = {isDrawing: false};
+      var gameObj = {isDrawing: false, word: null};
       socket.emit('newGame', gameObj)
     };
   });
