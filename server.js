@@ -56,6 +56,7 @@ io.on('connection', function (socket) {
       };
       users.unshift(socket.id);
       io.emit('startOver');
+      io.emit('guessedRight');
     } else {
       io.emit('guess', message);
     };

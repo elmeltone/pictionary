@@ -15,6 +15,10 @@ $(function() {
         socket.emit('newUser');
     };
 
+    var guessedRight = function() {
+        $('.end-notify').delay(300).slideDown('slow').delay('1500').slideUp('slow');
+    };
+
     var pictionary = function() {
         var canvas, context;
 
@@ -95,6 +99,7 @@ $(function() {
             guess(message);
         });
         socket.on('startOver', startOver);
+        socket.on('guessedRight', guessedRight);
     };
 
     pictionary();

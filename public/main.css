@@ -430,11 +430,9 @@ h1 {
   width: 100%;
   margin: 0 0 4px 0;
   padding: 4px 20px;
-  background: #02c8a7;
-  color: #fed963;
-  font-family: "Slabo 27px", serif;
   letter-spacing: 8px;
-  border-bottom: 2px solid #017c68; }
+  border-bottom: 2px solid #017c68;
+  color: #fed963; }
 
 canvas {
   height: 60vh;
@@ -443,6 +441,29 @@ canvas {
   margin-top: 4px; }
 
 /***** Specific Styles *****/
+h1, .end-notify {
+  background: #02c8a7;
+  font-family: "Slabo 27px", serif;
+  border: 2px solid #017c68; }
+
+.end-notify {
+  position: absolute;
+  display: none;
+  top: 2em;
+  right: 0;
+  padding: 2em 4px 4px 4px;
+  color: #ffffff; }
+
+.end-notify, #word, .guess-place, .guesses, canvas {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px; }
+
+#guessed {
+  color: #f53240;
+  color: #fed963; }
+
 #game, #top-message, #guess, canvas, #guess-list {
   width: 96%;
   margin-left: auto;
@@ -457,10 +478,7 @@ canvas {
   width: 60%;
   margin: 0 auto;
   background: #f53240;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  border: 1px solid #b80916;
   -webkit-box-shadow: 0 8px 4px -4px #737373;
   -moz-box-shadow: 0 8px 4px -4px #737373;
   box-shadow: 0 8px 4px -4px #737373; }
@@ -472,11 +490,7 @@ canvas {
     outline: none; }
 
 .guess-place, .guesses, canvas {
-  border: 2px #02c8a7 solid;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px; }
+  border: 2px #02c8a7 solid; }
 
 .guess-place {
   display: block;

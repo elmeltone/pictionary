@@ -116,11 +116,9 @@ h1 {
   width: 100%;
   margin:  0 0 4px 0;
   padding: 4px 20px;
-  background: $complement;
-  color: lighten($anchor, 20%);
-  font-family: $serif;
   letter-spacing: 8px;
   border-bottom: 2px solid darken($complement, 15%);
+  color: lighten($anchor, 20%);
 }
 
 canvas {
@@ -131,6 +129,30 @@ canvas {
 }
 
 /***** Specific Styles *****/
+
+h1, .end-notify {
+  background: $complement;
+  font-family: $serif;
+  border: 2px solid darken($complement, 15%);
+}
+
+.end-notify {
+  position: absolute;
+  display: none;
+  top: 2em;
+  right: 0;
+  padding: 2em 4px 4px 4px;
+  color: $plain;
+}
+
+.end-notify, #word, .guess-place, .guesses, canvas {
+  @include border-radius(4px);
+}
+
+#guessed {
+  color: $emphasis;
+  color: lighten($anchor, 20%);
+}
 
 #game, #top-message, #guess, canvas, #guess-list {
   width: 96%;
@@ -148,7 +170,7 @@ canvas {
   width: 60%;
   margin: 0 auto;
   background: $emphasis;
-  @include border-radius(4px);
+  border: 1px solid darken($emphasis, 20%);
   @include box-shadow(0, 8px, 4px, -4px, lighten($shadow, 30%));
 }
 
@@ -162,7 +184,6 @@ canvas {
 
 .guess-place, .guesses, canvas {
   border: 2px $complement solid;
-  @include border-radius(4px);
 }
 
 .guess-place {
