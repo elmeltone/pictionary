@@ -35,9 +35,9 @@ $(function() {
                 $guess.hide();
                 $word.show();
                 $word.text('Draw: '+gameObj.word);
-                canvas.on('mousedown', function(event) {
+                canvas.on(('mousedown'||'touchstart'), function(event) {
                     drawing = true;
-                }).on('mousemove', function(event) {
+                }).on(('mousemove'||'touchmove'), function(event) {
                     if (drawing) {
                         var offset = canvas.offset();
                         var position = {x: event.pageX - offset.left,
@@ -45,13 +45,13 @@ $(function() {
                         draw(position);
                         socket.emit('draw', position);
                     };
-                }).on('mouseup', function(event) {
+                }).on(('mouseup'||'touchend'), function(event) {
                     drawing = false;
                 }).on('mouseleave', function() {
                     canvas.mouseup();
                 });
             } else {
-                canvas.on('mousedown', function(event) {
+                canvas.on(('mousedown'||'touchstart'), function(event) {
                     drawing = false;
                 });
                 $word.hide();
