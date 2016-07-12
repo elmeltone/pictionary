@@ -6,15 +6,38 @@ $(function() {
         'reconnectionAttempts': 2
     });
 
+    var here = false;
     var $guess = $('#guess');
     var $word = $('#word');
     var $guesses = $('.guesses');
     var message;
 
+
+
+    var welcome = function() {
+        if (!here) {
+            $('.welcome').delay(300).slideDown('slow').delay('1500').slideUp('slow');
+            here = true;
+        };
+    };
+
+    var welcomePlay = function() {
+        if (!here) {
+            $('.welcome-play').delay(300).slideDown('slow').delay('1500').slideUp('slow');
+            here = true;
+        };
+    };
+
     var startOver = function(magicWord) {
         $('#guessed').text('');
         $('#guessed').text(magicWord);
         socket.emit('newUser');
+    };
+
+    var count = function(users) {
+        $('#mid-count').text('');
+        $('#mid-count').text(users);
+        $('.connect').delay(2500).slideDown('slow').delay('1500').slideUp('slow');
     };
 
     var guessedRight = function() {
@@ -91,6 +114,9 @@ $(function() {
 
         socket.emit('newUser');
         socket.on('newGame', newGame);
+        socket.on('welcome', welcome);
+        socket.on('welcome-play', welcomePlay);
+        socket.on('count', count);
         socket.on('draw', function(position) {
             draw(position);
         });

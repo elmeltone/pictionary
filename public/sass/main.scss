@@ -130,13 +130,7 @@ canvas {
 
 /***** Specific Styles *****/
 
-h1, .end-notify {
-  background: $complement;
-  font-family: $serif;
-  border: 2px solid darken($complement, 15%);
-}
-
-.end-notify {
+.flag {
   position: absolute;
   display: none;
   top: 2em;
@@ -145,11 +139,17 @@ h1, .end-notify {
   color: lighten($anchor, 20%);
 }
 
-.end-notify, #word, .guess-place, .guesses, canvas {
+h1, .flag {
+  background: $complement;
+  font-family: $serif;
+  border: 2px solid darken($complement, 15%);
+}
+
+.flag, #word, .guess-place, .guesses, canvas {
   @include border-radius(4px);
 }
 
-#guessed {
+#start-count, #mid-count, #guessed {
   color: $plain;
   font-weight: 600;
 }

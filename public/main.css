@@ -441,12 +441,7 @@ canvas {
   margin-top: 4px; }
 
 /***** Specific Styles *****/
-h1, .end-notify {
-  background: #02c8a7;
-  font-family: "Slabo 27px", serif;
-  border: 2px solid #017c68; }
-
-.end-notify {
+.flag {
   position: absolute;
   display: none;
   top: 2em;
@@ -454,13 +449,18 @@ h1, .end-notify {
   padding: 1.25em 4px 4px 4px;
   color: #fed963; }
 
-.end-notify, #word, .guess-place, .guesses, canvas {
+h1, .flag {
+  background: #02c8a7;
+  font-family: "Slabo 27px", serif;
+  border: 2px solid #017c68; }
+
+.flag, #word, .guess-place, .guesses, canvas {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
-#guessed {
+#start-count, #mid-count, #guessed {
   color: #ffffff;
   font-weight: 600; }
 
