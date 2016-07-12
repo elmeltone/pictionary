@@ -11,7 +11,9 @@ $(function() {
     var $guesses = $('.guesses');
     var message;
 
-    var startOver = function() {
+    var startOver = function(magicWord) {
+        $('#guessed').text('');
+        $('#guessed').text(magicWord);
         socket.emit('newUser');
     };
 
