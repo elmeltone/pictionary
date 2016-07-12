@@ -142,7 +142,7 @@ h1, .end-notify {
   top: 2em;
   right: 0;
   padding: 2em 4px 4px 4px;
-  color: $plain;
+  color: lighten($anchor, 20%);
 }
 
 .end-notify, #word, .guess-place, .guesses, canvas {
@@ -150,8 +150,8 @@ h1, .end-notify {
 }
 
 #guessed {
-  color: $emphasis;
-  color: lighten($anchor, 20%);
+  color: $plain;
+  font-weight: 600;
 }
 
 #game, #top-message, #guess, canvas, #guess-list {

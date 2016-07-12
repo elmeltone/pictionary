@@ -452,7 +452,7 @@ h1, .end-notify {
   top: 2em;
   right: 0;
   padding: 2em 4px 4px 4px;
-  color: #ffffff; }
+  color: #fed963; }
 
 .end-notify, #word, .guess-place, .guesses, canvas {
   -webkit-border-radius: 4px;
@@ -461,8 +461,8 @@ h1, .end-notify {
   border-radius: 4px; }
 
 #guessed {
-  color: #f53240;
-  color: #fed963; }
+  color: #ffffff;
+  font-weight: 600; }
 
 #game, #top-message, #guess, canvas, #guess-list {
   width: 96%;
