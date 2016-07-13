@@ -414,48 +414,44 @@ h1, div, input {
   text-align: center; }
 
 input, canvas {
-  margin-bottom: 4px;
-  -webkit-box-shadow: 0 8px 4px -4px #737373;
-  -moz-box-shadow: 0 8px 4px -4px #737373;
-  box-shadow: 0 8px 4px -4px #737373; }
+  margin-bottom: 4px; }
 
 input:hover {
   cursor: pointer; }
 
 h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 99;
-  width: 100%;
-  margin: 0 0 4px 0;
-  padding: 4px 20px;
-  letter-spacing: 8px;
-  border-bottom: 2px solid #017c68;
-  color: #fed963; }
+  letter-spacing: 8px; }
 
 canvas {
   height: 60vh;
   background: #ffffff;
   display: block;
   margin-top: 4px;
-  cursor: url("http://i.imgur.com/eU9euoe.png"), auto; }
+  -webkit-box-shadow: 0 8px 4px -4px #737373;
+  -moz-box-shadow: 0 8px 4px -4px #737373;
+  box-shadow: 0 8px 4px -4px #737373; }
 
 /***** Specific Styles *****/
 .flag {
-  position: absolute;
   display: none;
-  top: 2em;
-  right: 4vw;
-  padding: 1.25em 4px 4px 4px;
-  color: #fed963; }
+  z-index: 100;
+  text-align: center;
+  font-size: 2em; }
 
 h1, .flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 0 4px 0;
+  padding: 4px 20px;
   background: #02c8a7;
   font-family: "Slabo 27px", serif;
+  color: #fed963;
   border: 2px solid #017c68; }
 
-.flag, #word, .guess-place, .guesses, canvas {
+#word, .guess-place, .guesses, canvas {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -479,10 +475,7 @@ h1, .flag {
   width: 60%;
   margin: 0 auto;
   background: #f53240;
-  border: 1px solid #b80916;
-  -webkit-box-shadow: 0 8px 4px -4px #737373;
-  -moz-box-shadow: 0 8px 4px -4px #737373;
-  box-shadow: 0 8px 4px -4px #737373; }
+  border: 1px solid #b80916; }
 
 .guess-place, .guesses {
   margin: 0 auto;
@@ -504,10 +497,7 @@ h1, .flag {
   width: 80%;
   margin: 0 auto;
   background: #ffffff;
-  overflow-y: auto;
-  -webkit-box-shadow: 0 8px 4px -4px #737373;
-  -moz-box-shadow: 0 8px 4px -4px #737373;
-  box-shadow: 0 8px 4px -4px #737373; }
+  overflow-y: auto; }
 
 /***** Media Queries *****/
 @media screen and (min-width: 400px) {

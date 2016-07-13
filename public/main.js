@@ -21,13 +21,6 @@ $(function() {
         };
     };
 
-    var welcomePlay = function() {
-        if (!here) {
-            $('.welcome-play').delay(300).slideDown('slow').delay('1500').slideUp('slow');
-            here = true;
-        };
-    };
-
     var startOver = function(magicWord) {
         $('#guessed').text('');
         $('#guessed').text(magicWord);
@@ -37,11 +30,11 @@ $(function() {
     var count = function(users) {
         $('#mid-count').text('');
         $('#mid-count').text(users);
-        $('.connect').delay(2500).slideDown('slow').delay('1500').slideUp('slow');
+        $('.connect').delay(3800).slideDown('slow').delay('2500').slideUp('slow');
     };
 
     var guessedRight = function() {
-        $('.end-notify').delay(300).slideDown('slow').delay('1500').slideUp('slow');
+        $('.end-notify').delay(300).slideDown('slow').delay('2500').slideUp('slow');
     };
 
     var pictionary = function() {
@@ -110,12 +103,16 @@ $(function() {
         };
 
         var drawing = false;
+        if (drawing) {
+            $(canvas).css('cursor', 'url("http://i.imgur.com/eU9euoe.png"), auto');
+        } else {
+            $(canvas).css('cursor', 'url("http://i.imgur.com/APQAtOQ.png"), auto');
+        };
         var guessBox;
 
         socket.emit('newUser');
         socket.on('newGame', newGame);
         socket.on('welcome', welcome);
-        socket.on('welcome-play', welcomePlay);
         socket.on('count', count);
         socket.on('draw', function(position) {
             draw(position);

@@ -44,12 +44,8 @@ io.on('connection', function (socket) {
       var gameObj = {isDrawing: false, word: null};
       socket.emit('newGame', gameObj)
     };
-    if (users.length < 2) {
-      socket.emit('welcome');
-    } else {
-      socket.emit('welcome-play');
-      socket.broadcast.emit('count', users.length);
-    };
+    socket.emit('welcome');
+    socket.broadcast.emit('count', users.length);
   });
   socket.on('draw', function (position) {
     socket.broadcast.emit('draw', position);
