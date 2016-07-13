@@ -48,6 +48,7 @@ $(function() {
             canvas[0].width = canvas[0].offsetWidth;
             canvas[0].height = canvas[0].offsetHeight;
             if (gameObj.isDrawing) {
+                $(canvas).css('cursor', 'url("http://i.imgur.com/eU9euoe.png"), auto');
                 $guess.hide();
                 $word.show();
                 $word.text('Draw: '+gameObj.word);
@@ -67,6 +68,7 @@ $(function() {
                     canvas.mouseup();
                 });
             } else {
+                $(canvas).css('cursor', 'url("http://i.imgur.com/APQAtOQ.png"), auto');
                 canvas.on('touchstart mousedown', function(event) {
                     drawing = false;
                 });
@@ -103,11 +105,6 @@ $(function() {
         };
 
         var drawing = false;
-        if (drawing) {
-            $(canvas).css('cursor', 'url("http://i.imgur.com/eU9euoe.png"), auto');
-        } else {
-            $(canvas).css('cursor', 'url("http://i.imgur.com/APQAtOQ.png"), auto');
-        };
         var guessBox;
 
         socket.emit('newUser');
