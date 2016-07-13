@@ -113,7 +113,10 @@ h1 {
 }
 
 canvas {
-  height: 60vh;
+  max-width: 312px;
+  max-height: 312px;
+  min-width: 312px;
+  min-height: 312px;
   background: $plain;
   display: block;
   margin-top: 4px;
@@ -157,14 +160,17 @@ h1, .flag {
   margin-right: auto;
 }
 
-#top-message {
-  padding: 0 0 1% 0;
+#top-message, #guess {
+  max-width: 312px;
+  padding: 0;
 }
+
+
 
 #word {
   display: none;
   height: 10%;
-  width: 60%;
+  max-width: 312px;
   margin: 0 auto;
   background: $emphasis;
   border: 1px solid darken($emphasis, 20%);
@@ -183,16 +189,16 @@ h1, .flag {
 }
 
 .guess-place {
+  width: 100%;
   display: block;
-  width: 60%;
   &:hover {
     cursor: text;
   }
 }
 
 .guesses {
-  height: 10vh;
-  width: 80%;
+  width: 312px;
+  height: 8vh;
   margin: 0 auto;
   background: $plain;
   overflow-y: auto;

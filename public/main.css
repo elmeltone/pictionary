@@ -424,7 +424,10 @@ h1 {
   letter-spacing: 8px; }
 
 canvas {
-  height: 60vh;
+  max-width: 312px;
+  max-height: 312px;
+  min-width: 312px;
+  min-height: 312px;
   background: #ffffff;
   display: block;
   margin-top: 4px;
@@ -466,13 +469,14 @@ h1, .flag {
   margin-left: auto;
   margin-right: auto; }
 
-#top-message {
-  padding: 0 0 1% 0; }
+#top-message, #guess {
+  max-width: 312px;
+  padding: 0; }
 
 #word {
   display: none;
   height: 10%;
-  width: 60%;
+  max-width: 312px;
   margin: 0 auto;
   background: #f53240;
   border: 1px solid #b80916; }
@@ -487,14 +491,14 @@ h1, .flag {
   border: 2px #02c8a7 solid; }
 
 .guess-place {
-  display: block;
-  width: 60%; }
+  width: 100%;
+  display: block; }
   .guess-place:hover {
     cursor: text; }
 
 .guesses {
-  height: 10vh;
-  width: 80%;
+  width: 312px;
+  height: 8vh;
   margin: 0 auto;
   background: #ffffff;
   overflow-y: auto; }
