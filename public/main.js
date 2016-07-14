@@ -84,7 +84,7 @@ $(function() {
         var draw = function(position) {
             context.beginPath();
             context.arc(position.x, position.y,
-                         6, 0, 2 * Math.PI);
+                         3, 0, 2 * Math.PI);
             context.fill();
         };
 
