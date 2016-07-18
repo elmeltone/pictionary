@@ -509,7 +509,9 @@ h1, .flag {
     font-size: 20px;
     padding-top: 10vh; }
   .guesses {
-    height: 15vh; } }
+    height: 15vh; }
+  #top-message {
+    margin-top: 25px; } }
 
 @media screen and (min-width: 700px) {
   body {
