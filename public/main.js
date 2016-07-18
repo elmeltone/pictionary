@@ -52,9 +52,9 @@ $(function() {
                 $guess.hide();
                 $word.show();
                 $word.text('Draw: '+gameObj.word);
-                canvas.on('touchstart mousedown', function(event) {
+                canvas.on('mousedown', function(event) {
                     drawing = true;
-                }).on('touchmove mousemove', function(event) {
+                }).on('mousemove', function(event) {
                     if (drawing) {
                         var offset = canvas.offset();
                         var position = {x: event.pageX - offset.left,
@@ -62,14 +62,29 @@ $(function() {
                         draw(position);
                         socket.emit('draw', position);
                     };
-                }).on('touchend mouseup touchcancel', function(event) {
+                }).on('mouseup', function(event) {
                     drawing = false;
                 }).on('mouseleave', function() {
                     canvas.mouseup();
                 });
+                canvas.on('touchstart', function(event) {
+                    drawing = true;
+                }).on('touchmove', function(event) {
+                    if (drawing) {
+                        var offset = canvas.offset();
+                        var position = {x: event.pageX - offset.left,
+                                        y: event.pageY - offset.top};
+                        draw(position);
+                        socket.emit('draw', position);
+                    };
+                }).on('touchend', function(event) {
+                    drawing = false;
+                }).on('touchleave', function() {
+                    canvas.mouseup();
+                });
             } else {
                 $(canvas).css('cursor', 'url("http://i.imgur.com/APQAtOQ.png"), auto');
-                canvas.on('touchstart mousedown', function(event) {
+                canvas.on('mousedown', function(event) {
                     drawing = false;
                 });
                 $word.hide();
