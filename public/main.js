@@ -68,8 +68,10 @@ $(function() {
                     canvas.mouseup();
                 });
                 canvas.on('touchstart', function(event) {
+                    event.preventDefault();
                     drawing = true;
                 }).on('touchmove', function(event) {
+                    event.preventDefault();
                     if (drawing) {
                         var offset = canvas.offset();
                         var position = {x: event.pageX - offset.left,
@@ -78,8 +80,10 @@ $(function() {
                         socket.emit('draw', position);
                     };
                 }).on('touchend', function(event) {
+                    event.preventDefault();
                     drawing = false;
                 }).on('touchleave', function() {
+                    event.preventDefault();
                     canvas.mouseup();
                 });
             } else {
