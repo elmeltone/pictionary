@@ -46,7 +46,7 @@ $(function() {
             canvas.width = 312;
             canvas.height = 312;
             context = canvas[0].getContext('2d');
-            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.clearRect(0, 0, 312, 312);
             canvas[0].width = canvas[0].offsetWidth;
             canvas[0].height = canvas[0].offsetHeight;
             if (gameObj.isDrawing) {
